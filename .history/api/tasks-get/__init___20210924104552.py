@@ -9,25 +9,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     name = req.params.get('name')
     if not name:
         try:
-            tasks = [
-                {
-                    "id": 1,
-                    "label": "🍔 Eat",
-                    "status": ""
-                },
-                {
-                    "id": 2,
-                    "label": "🛏 Sleep",
-                    "status": ""
-                },
-                {
-                    "id": 3,
-                    "label": "</> Code",
-                    "status": ""
-                }
-            ]
-
-            req_body = req.get_json(tasks)
+            req_body = req.get_json()
         except ValueError:
             pass
         else:

@@ -27,7 +27,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                 }
             ]
 
-            req_body = req.get_json(tasks)
+            req_body = req.get_json()
         except ValueError:
             pass
         else:
