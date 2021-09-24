@@ -1,5 +1,4 @@
 import logging
-import json
 
 import azure.functions as func
 
@@ -40,7 +39,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
-            json.dumps(tasks),
-            mimetype="application/json",
-            status_code=200
+             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             status_code=200
         )
